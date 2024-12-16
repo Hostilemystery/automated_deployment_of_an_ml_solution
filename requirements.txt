@@ -1,6 +1,14 @@
+pandas 
 mlflow
-pandas
+notebook
 numpy
 scikit-learn
 matplotlib
-seaborn
+python-box
+pyYAML
+tqdm
+ensure
+joblib
+types-PyYAML
+Flask
+Flask-Cors
