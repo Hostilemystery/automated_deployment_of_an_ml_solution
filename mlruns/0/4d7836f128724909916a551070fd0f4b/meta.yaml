@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Revision/automated_deployment_of_an_ml_solution/mlruns/0/4d7836f128724909916a551070fd0f4b/artifacts
+end_time: 1734466643298
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4d7836f128724909916a551070fd0f4b
+run_name: victorious-kit-939
+run_uuid: 4d7836f128724909916a551070fd0f4b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734466639237
+status: 3
+tags: []
+user_id: nanji
