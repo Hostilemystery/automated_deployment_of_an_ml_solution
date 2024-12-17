@@ -1,2 +1,256 @@
 [2024-12-16 21:52:33,560: INFO: main: Welcome to our custom logging]
 [2024-12-16 21:52:50,318: INFO: main: Welcome to our custom logging]
+[2024-12-16 22:47:32,804: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-16 22:47:32,807: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-16 22:47:32,809: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-16 22:47:32,810: INFO: common: created directory at: artifacts]
+[2024-12-16 22:47:32,811: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-16 22:47:33,455: INFO: 2092720032: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 23329
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "c69888a4ae59bc5a893392785a938ccd4937981c06ba8a9d6a21aa52b4ab5b6e"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 9EF8:266931:C68C3:E1D33:67609FF4
+Accept-Ranges: bytes
+Date: Mon, 16 Dec 2024 21:47:32 GMT
+Via: 1.1 varnish
+X-Served-By: cache-man4140-MAN
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1734385653.785057,VS0,VE180
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 3250fd9a984f3b0dbdfc3803194c0705774bc0cd
+Expires: Mon, 16 Dec 2024 21:52:32 GMT
+Source-Age: 0
+
+]
+[2024-12-17 12:27:34,706: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-12-17 12:27:34,708: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 12:27:34,711: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 12:27:34,711: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 12:27:34,712: INFO: common: created directory at: artifacts]
+[2024-12-17 12:27:34,713: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-17 12:27:34,762: ERROR: main: <urlopen error [Errno 11001] getaddrinfo failed>]
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 1346, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1285, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1331, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1447, in connect
+    super().connect()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 946, in connect
+    self.sock = self._create_connection(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\socket.py", line 823, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Revision\automated_deployment_of_an_ml_solution\main.py", line 10, in <module>
+    obj.initiate_data_ingestion()
+  File "d:\Revision\automated_deployment_of_an_ml_solution\src\datascience\pipeline\data_ingestion_pipeline.py", line 17, in initiate_data_ingestion
+    data_ingestion.download_file()
+  File "d:\Revision\automated_deployment_of_an_ml_solution\src\datascience\components\data_ingestion.py", line 17, in download_file
+    filename, headers = request.urlretrieve(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 239, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 517, in open
+    response = self._open(req, data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 534, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 494, in _call_chain
+    result = func(*args)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 1389, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 1349, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 11001] getaddrinfo failed>
+[2024-12-17 12:29:10,498: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-12-17 12:29:10,500: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 12:29:10,501: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 12:29:10,501: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 12:29:10,501: INFO: common: created directory at: artifacts]
+[2024-12-17 12:29:10,503: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-17 12:29:10,527: ERROR: main: <urlopen error [Errno 11001] getaddrinfo failed>]
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 1346, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1285, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1331, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1447, in connect
+    super().connect()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 946, in connect
+    self.sock = self._create_connection(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\socket.py", line 823, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Revision\automated_deployment_of_an_ml_solution\main.py", line 10, in <module>
+    obj.initiate_data_ingestion()
+  File "d:\Revision\automated_deployment_of_an_ml_solution\src\datascience\pipeline\data_ingestion_pipeline.py", line 17, in initiate_data_ingestion
+    data_ingestion.download_file()
+  File "d:\Revision\automated_deployment_of_an_ml_solution\src\datascience\components\data_ingestion.py", line 17, in download_file
+    filename, headers = request.urlretrieve(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 239, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 517, in open
+    response = self._open(req, data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 534, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 494, in _call_chain
+    result = func(*args)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 1389, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 1349, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 11001] getaddrinfo failed>
+[2024-12-17 12:29:40,102: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-12-17 12:29:40,104: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 12:29:40,104: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 12:29:40,104: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 12:29:40,105: INFO: common: created directory at: artifacts]
+[2024-12-17 12:29:40,105: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-17 12:29:52,159: ERROR: main: <urlopen error [Errno 11001] getaddrinfo failed>]
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 1346, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1285, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1331, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1447, in connect
+    super().connect()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 946, in connect
+    self.sock = self._create_connection(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\socket.py", line 823, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Revision\automated_deployment_of_an_ml_solution\main.py", line 10, in <module>
+    obj.initiate_data_ingestion()
+  File "d:\Revision\automated_deployment_of_an_ml_solution\src\datascience\pipeline\data_ingestion_pipeline.py", line 17, in initiate_data_ingestion
+    data_ingestion.download_file()
+  File "d:\Revision\automated_deployment_of_an_ml_solution\src\datascience\components\data_ingestion.py", line 17, in download_file
+    filename, headers = request.urlretrieve(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 239, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 517, in open
+    response = self._open(req, data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 534, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 494, in _call_chain
+    result = func(*args)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 1389, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.3568.0_x64__qbz5n2kfra8p0\lib\urllib\request.py", line 1349, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 11001] getaddrinfo failed>
+[2024-12-17 12:30:19,087: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-12-17 12:30:19,089: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 12:30:19,090: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 12:30:19,091: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 12:30:19,091: INFO: common: created directory at: artifacts]
+[2024-12-17 12:30:19,092: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-17 12:30:32,562: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 23329
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "c69888a4ae59bc5a893392785a938ccd4937981c06ba8a9d6a21aa52b4ab5b6e"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 0A59:3C5D9E:D3C3C:D830A:676160D7
+Accept-Ranges: bytes
+Date: Tue, 17 Dec 2024 11:30:32 GMT
+Via: 1.1 varnish
+X-Served-By: cache-cdg-lfpb1150034-CDG
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1734435032.090745,VS0,VE196
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: a5637a392a3953b7e031ebc30cc61f100bcc9e48
+Expires: Tue, 17 Dec 2024 11:35:32 GMT
+Source-Age: 0
+
+]
+[2024-12-17 12:30:32,573: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2024-12-17 15:26:51,115: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 15:26:51,119: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 15:26:51,123: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 15:26:51,128: INFO: common: created directory at: artifacts]
+[2024-12-17 15:26:51,130: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-17 19:55:08,059: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-12-17 19:55:08,060: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 19:55:08,062: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 19:55:08,063: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 19:55:08,063: INFO: common: created directory at: artifacts]
+[2024-12-17 19:55:08,064: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-17 19:55:08,064: INFO: data_ingestion: File already exists]
+[2024-12-17 19:55:08,068: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2024-12-17 19:55:08,068: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-12-17 19:55:08,069: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 19:55:08,069: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 19:55:08,070: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 19:55:08,071: INFO: common: created directory at: artifacts]
+[2024-12-17 19:55:08,072: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-17 19:55:08,083: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]

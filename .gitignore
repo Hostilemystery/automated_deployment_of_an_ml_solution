@@ -1,1 +1,4 @@
 env/
+logs/
+artifacts/
+logs/logging.log
