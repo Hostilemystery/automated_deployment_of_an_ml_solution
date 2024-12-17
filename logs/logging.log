@@ -802,3 +802,69 @@ x==========x]
 [2024-12-17 21:42:12,198: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 21:42:12] "GET / HTTP/1.1" 200 -]
 [2024-12-17 21:42:12,238: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 21:42:12] "[33mGET /static/assets/img/form-v9.jpg HTTP/1.1[0m" 404 -]
 [2024-12-17 21:42:41,501: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 21:42:41] "POST /predict HTTP/1.1" 200 -]
+[2024-12-17 21:55:59,238: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 21:55:59] "POST /predict HTTP/1.1" 200 -]
+[2024-12-17 21:56:14,738: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000]
+[2024-12-17 21:56:14,739: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-17 21:56:14,740: INFO: _internal:  * Restarting with stat]
+[2024-12-17 21:56:15,604: WARNING: _internal:  * Debugger is active!]
+[2024-12-17 21:56:15,609: INFO: _internal:  * Debugger PIN: 139-595-428]
+[2024-12-17 21:56:49,481: INFO: _internal:  * Detected change in 'd:\\Revision\\automated_deployment_of_an_ml_solution\\app.py', reloading]
+[2024-12-17 21:56:49,587: INFO: _internal:  * Restarting with stat]
+[2024-12-17 21:56:58,567: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.151:8080]
+[2024-12-17 21:56:58,567: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-17 21:57:06,119: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 21:57:06] "GET / HTTP/1.1" 200 -]
+[2024-12-17 21:57:17,866: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-12-17 21:57:17,868: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 21:57:17,870: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 21:57:17,872: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 21:57:17,872: INFO: common: created directory at: artifacts]
+[2024-12-17 21:57:17,872: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-17 21:57:17,872: INFO: data_ingestion: File already exists]
+[2024-12-17 21:57:17,877: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2024-12-17 21:57:17,877: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-12-17 21:57:17,879: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 21:57:17,880: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 21:57:17,881: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 21:57:17,881: INFO: common: created directory at: artifacts]
+[2024-12-17 21:57:17,882: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-17 21:57:17,896: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-12-17 21:57:17,896: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-12-17 21:57:17,898: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 21:57:17,899: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 21:57:17,901: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 21:57:17,902: INFO: common: created directory at: artifacts]
+[2024-12-17 21:57:17,902: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-17 21:57:17,926: INFO: data_transformation: Splited data into training and test sets]
+[2024-12-17 21:57:17,926: INFO: data_transformation: (1199, 12)]
+[2024-12-17 21:57:17,926: INFO: data_transformation: (400, 12)]
+[2024-12-17 21:57:17,927: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-12-17 21:57:17,927: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-12-17 21:57:17,929: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 21:57:17,929: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 21:57:17,930: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 21:57:17,931: INFO: common: created directory at: artifacts]
+[2024-12-17 21:57:17,931: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-17 21:57:17,946: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2024-12-17 21:57:17,947: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2024-12-17 21:57:17,949: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-17 21:57:17,949: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-17 21:57:17,951: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-17 21:57:17,951: INFO: common: created directory at: artifacts]
+[2024-12-17 21:57:17,951: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-12-17 21:57:19,018: INFO: common: json file saved at: artifacts\model_evaluation\metrics.json]
+[2024-12-17 21:57:27,334: INFO: main: >>>>>> stage Model evaluation stage completed <<<<<<
+
+x==========x]
+[2024-12-17 21:57:27,727: INFO: _internal: 127.0.0.1 - - [17/Dec/2024 21:57:27] "GET /train HTTP/1.1" 200 -]
