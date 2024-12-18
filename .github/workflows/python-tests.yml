@@ -29,7 +29,6 @@ jobs:
     - name: Run tests
       run: |
         python tests.py  # Run your test script
-      continue-on-error: true  # Allow the workflow to proceed even if tests fail
 
     - name: Send failure notification
       if: failure()  # Only run if a previous step fails
