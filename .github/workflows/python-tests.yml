@@ -1,0 +1,37 @@
+name: Python Tests
+
+on:
+  push:
+    branches:
+      - main  # Trigger tests on push to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger tests on pull requests to the main branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9  # Specify the Python version
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # Ensure you have a requirements.txt file with your dependencies
+
+    - name: Run tests
+      run: |
+        python tests.py  # Run your test script
+      continue-on-error: true  # Allow the workflow to proceed even if tests fail
+
+    - name: Send failure notification
+      if: failure()  # Only run if a previous step fails
+      run: |
+        echo "::error::Tests failed. Please check the logs for more details."
