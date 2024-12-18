@@ -1,0 +1,10 @@
+services:
+  flask_app:
+    build: .
+    ports:
+      - "8080:8080" # Map the container's port 8080 to the host's port 8080
+    volumes:
+      - .:/app # Mount the current directory to /app in the container
+    environment:
+      FLASK_APP: app.py
+    command: python app.py # Use python to run app.py directly

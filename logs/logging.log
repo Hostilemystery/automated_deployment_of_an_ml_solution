@@ -984,3 +984,114 @@ x==========x]
 
 x==========x]
 [2024-12-18 16:41:42,537: INFO: _internal: 127.0.0.1 - - [18/Dec/2024 16:41:42] "GET /train HTTP/1.1" 200 -]
+[2024-12-18 16:26:15,827: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.18.0.2:8080]
+[2024-12-18 16:26:15,828: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-18 16:26:24,904: INFO: _internal: 172.18.0.1 - - [18/Dec/2024 16:26:24] "GET / HTTP/1.1" 200 -]
+[2024-12-18 16:26:25,553: INFO: _internal: 172.18.0.1 - - [18/Dec/2024 16:26:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2024-12-18 16:26:30,627: INFO: _internal: 172.18.0.1 - - [18/Dec/2024 16:26:30] "POST / HTTP/1.1" 200 -]
+[2024-12-18 16:26:36,060: INFO: _internal: 172.18.0.1 - - [18/Dec/2024 16:26:36] "POST / HTTP/1.1" 200 -]
+[2024-12-18 16:26:41,143: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-12-18 16:26:41,150: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-18 16:26:41,153: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-18 16:26:41,158: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-18 16:26:41,160: INFO: common: created directory at: artifacts]
+[2024-12-18 16:26:41,164: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-18 16:26:41,166: INFO: data_ingestion: File already exists]
+[2024-12-18 16:26:41,180: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2024-12-18 16:26:41,181: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-12-18 16:26:41,187: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-18 16:26:41,191: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-18 16:26:41,195: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-18 16:26:41,198: INFO: common: created directory at: artifacts]
+[2024-12-18 16:26:41,200: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-18 16:26:41,234: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-12-18 16:26:41,234: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-12-18 16:26:41,241: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-18 16:26:41,244: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-18 16:26:41,248: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-18 16:26:41,250: INFO: common: created directory at: artifacts]
+[2024-12-18 16:26:41,253: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-18 16:26:41,280: INFO: data_transformation: Splited data into training and test sets]
+[2024-12-18 16:26:41,280: INFO: data_transformation: (1199, 12)]
+[2024-12-18 16:26:41,280: INFO: data_transformation: (400, 12)]
+[2024-12-18 16:26:41,281: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-12-18 16:26:41,281: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-12-18 16:26:41,286: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-18 16:26:41,289: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-18 16:26:41,293: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-18 16:26:41,295: INFO: common: created directory at: artifacts]
+[2024-12-18 16:26:41,298: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-18 16:26:41,316: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2024-12-18 16:26:41,316: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2024-12-18 16:26:41,321: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-18 16:26:41,324: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-18 16:26:41,328: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-18 16:26:41,330: INFO: common: created directory at: artifacts]
+[2024-12-18 16:26:41,332: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-12-18 16:26:42,000: INFO: common: json file saved at: artifacts/model_evaluation/metrics.json]
+[2024-12-18 16:26:52,812: INFO: main: >>>>>> stage Model evaluation stage completed <<<<<<
+
+x==========x]
+[2024-12-18 16:26:53,326: INFO: _internal: 172.18.0.1 - - [18/Dec/2024 16:26:53] "GET /train HTTP/1.1" 200 -]
+[2024-12-18 16:26:55,475: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-12-18 16:26:55,482: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-18 16:26:55,484: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-18 16:26:55,488: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-18 16:26:55,491: INFO: common: created directory at: artifacts]
+[2024-12-18 16:26:55,493: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-18 16:26:55,495: INFO: data_ingestion: File already exists]
+[2024-12-18 16:26:55,504: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2024-12-18 16:26:55,505: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-12-18 16:26:55,510: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-18 16:26:55,513: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-18 16:26:55,517: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-18 16:26:55,519: INFO: common: created directory at: artifacts]
+[2024-12-18 16:26:55,522: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-18 16:26:55,559: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-12-18 16:26:55,560: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-12-18 16:26:55,567: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-18 16:26:55,570: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-18 16:26:55,574: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-18 16:26:55,576: INFO: common: created directory at: artifacts]
+[2024-12-18 16:26:55,579: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-18 16:26:55,610: INFO: data_transformation: Splited data into training and test sets]
+[2024-12-18 16:26:55,611: INFO: data_transformation: (1199, 12)]
+[2024-12-18 16:26:55,611: INFO: data_transformation: (400, 12)]
+[2024-12-18 16:26:55,611: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-12-18 16:26:55,612: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-12-18 16:26:55,617: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-18 16:26:55,620: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-18 16:26:55,624: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-18 16:26:55,626: INFO: common: created directory at: artifacts]
+[2024-12-18 16:26:55,628: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-18 16:26:55,644: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2024-12-18 16:26:55,645: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2024-12-18 16:26:55,650: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-12-18 16:26:55,654: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-18 16:26:55,658: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-18 16:26:55,660: INFO: common: created directory at: artifacts]
+[2024-12-18 16:26:55,663: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-12-18 16:26:56,421: INFO: common: json file saved at: artifacts/model_evaluation/metrics.json]
+[2024-12-18 16:27:06,130: INFO: main: >>>>>> stage Model evaluation stage completed <<<<<<
+
+x==========x]
+[2024-12-18 16:27:06,608: INFO: _internal: 172.18.0.1 - - [18/Dec/2024 16:27:06] "GET /train HTTP/1.1" 200 -]
