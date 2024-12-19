@@ -130,13 +130,17 @@ Cette documentation décrit les API disponibles pour notre application Flask. L'
   - `alcohol` (float) : Alcool.
 
 - **Réponse** :
+
   - **Succès** :
+
     ```json
     {
       "prediction": <prediction_value>
     }
     ```
+
   - **Erreur** :
+
     ```json
     {
       "error": "Invalid input or prediction error."
@@ -154,6 +158,7 @@ Cette documentation décrit les API disponibles pour notre application Flask. L'
 - **Description** : Cet endpoint lance l'entraînement du modèle de machine learning.
 
 - **Réponse** :
+
   ```json
   {
     "message": "Model training successful!"
@@ -167,6 +172,7 @@ Cette documentation décrit les API disponibles pour notre application Flask. L'
 - **Description** : Cet endpoint expose les métriques de l'application pour le monitoring avec Prometheus.
 
 - **Réponse** :
+
   ```plaintext
   # HELP python_gc_objects_collected_total Objects collected during GC
   # TYPE python_gc_objects_collected_total counter
@@ -182,6 +188,7 @@ Cette documentation décrit les API disponibles pour notre application Flask. L'
 - **Description** : Cet endpoint vérifie la santé de l'application et retourne un statut.
 
 - **Réponse** :
+
   ```json
   {
     "status": "healthy"
