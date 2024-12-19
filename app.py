@@ -1,10 +1,15 @@
 from flask import Flask, render_template, request, jsonify
+from prometheus_flask_exporter import PrometheusMetrics
 import os
 import numpy as np
 import pandas as pd
 from src.datascience.pipeline.prediction_pipeline import PredictionPipeline
 
 app = Flask(__name__)
+
+metrics = PrometheusMetrics(app)
+metrics.info(
+    "app_info", "App Info, this can be anything you want", version="1.0.0")
 
 
 @app.route('/', methods=['GET', 'POST'])
