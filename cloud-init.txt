@@ -1,10 +1,32 @@
 #!/bin/bash
-apt-get update
-apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+# Mise à jour du système
+apt-get update -y
+
+# Installation de paquets nécessaires
+apt-get install -y apt-transport-https ca-certificates curl software-properties-common git
+
+# Installation de Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-apt-get update
+apt-get update -y
 apt-get install -y docker-ce
+
+# Activation et démarrage de Docker
 systemctl start docker
 systemctl enable docker
-sudo docker run -d -p 8080:8080 anthonycrmx/mlapp:amd64
+
+# Installation de Docker Compose
+curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" \
+  -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+git clone https://github.com/Hostilemystery/automated_deployment_of_an_ml_solution.git /home/azureuser/mon_projet
+
+cd /home/azureuser
+
+cd mon_projet/
+
+sudo docker compose up
+
+# Lancement du docker-compose
+#/usr/local/bin/docker-compose up -d

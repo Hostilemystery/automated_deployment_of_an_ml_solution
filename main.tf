@@ -37,11 +37,26 @@ resource "azurerm_network_security_group" "nsg" {
   resource_group_name = azurerm_resource_group.rg.name
 }
 
-resource "azurerm_network_security_rule" "allow_http" {
-  name                        = "allow-8080"
+# Règles NSG pour SSH, Flask (8080), Prometheus (9090) et Grafana (3000)
+resource "azurerm_network_security_rule" "allow_ssh" {
+  name                        = "allow-ssh"
   resource_group_name         = azurerm_resource_group.rg.name
   network_security_group_name = azurerm_network_security_group.nsg.name
   priority                    = 100
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "22"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+}
+
+resource "azurerm_network_security_rule" "allow_8080" {
+  name                        = "allow-8080"
+  resource_group_name         = azurerm_resource_group.rg.name
+  network_security_group_name = azurerm_network_security_group.nsg.name
+  priority                    = 101
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
@@ -51,16 +66,30 @@ resource "azurerm_network_security_rule" "allow_http" {
   destination_address_prefix  = "*"
 }
 
-resource "azurerm_network_security_rule" "allow_ssh" {
-  name                        = "allow-ssh"
+resource "azurerm_network_security_rule" "allow_9090" {
+  name                        = "allow-9090"
   resource_group_name         = azurerm_resource_group.rg.name
   network_security_group_name = azurerm_network_security_group.nsg.name
-  priority                    = 101
+  priority                    = 102
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "22"
+  destination_port_range      = "9090"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+}
+
+resource "azurerm_network_security_rule" "allow_3000" {
+  name                        = "allow-3000"
+  resource_group_name         = azurerm_resource_group.rg.name
+  network_security_group_name = azurerm_network_security_group.nsg.name
+  priority                    = 103
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "3000"
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
 }
@@ -84,8 +113,6 @@ resource "azurerm_network_interface" "nic" {
     public_ip_address_id          = azurerm_public_ip.public_ip.id
   }
 
-  # Attache la NSG à l'interface réseau
-  # Cela va appliquer les règles NSG sur le trafic entrant/sortant
   depends_on = [
     azurerm_network_security_group.nsg
   ]
@@ -111,7 +138,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
     azurerm_network_interface.nic.id
   ]
 
-  # Cloud-init : Installation de Docker et lancement du conteneur
+  # Inclure le cloud-init pour installer docker, docker-compose et lancer le docker-compose up
   custom_data = filebase64("cloud-init.txt")
 
   os_disk {
@@ -126,4 +153,20 @@ resource "azurerm_linux_virtual_machine" "vm" {
     sku       = "18.04-LTS"
     version   = "latest"
   }
+}
+
+output "public_ip_address_qualite_du_vin" {
+  value = "Qualité du vin http://${azurerm_public_ip.public_ip.ip_address}:8080"
+}
+
+output "public_ip_address_prometheus" {
+  value = "Prometheus http://${azurerm_public_ip.public_ip.ip_address}:9090"
+}
+
+output "public_ip_address_grafana" {
+  value = "Grafana http://${azurerm_public_ip.public_ip.ip_address}:3000"
+}
+
+output "message" {
+  value = "Attendez_quelques_minutes_avant_d'accéder_aux_URL"
 }
