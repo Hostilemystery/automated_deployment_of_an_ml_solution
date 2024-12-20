@@ -197,7 +197,56 @@ Cette documentation décrit les API disponibles pour notre application Flask. L'
 
 ## Déploiement sur le Cloud
 
+### Ressources créées
+
+L'infrastructure déployée comprend les éléments suivants :
+
+- Groupe de Ressources (Resource Group) : Conteneur logique pour regrouper les ressources liées.
+
+- Réseau Virtuel (Virtual Network) et Sous-Réseau (Subnet) : Fournit un réseau isolé pour les ressources déployées.
+
+- Groupe de Sécurité Réseau (Network Security Group - NSG) : Définit les règles de sécurité pour contrôler le trafic entrant et sortant.
+
+- Adresse IP Publique (Public IP) : Permet l'accès externe à la machine virtuelle.
+
+- Interface Réseau (Network Interface) : Connecte la machine virtuelle au réseau virtuel.
+
+- Machine Virtuelle Linux (Linux Virtual Machine) : Héberge l'application avec Docker et Docker Compose.
+
+
+Le fichier ```main.tf``` contient la configuration Terraform nécessaire pour provisionner les ressources sur Azure.
+
+### Actions effectuées sur la VM
+
+- Mise à jour du système : Assure que tous les paquets sont à jour.
+- Installation des dépendances : Installe les paquets nécessaires pour Docker et Git.
+- Installation de Docker
+- Activation de Docker : Démarre et active le service Docker.
+- Installation de Docker Compose : Télécharge et rend exécutable Docker Compose.
+- Clonage du Projet : Clone le dépôt Git contenant l'application.
+- Lancement de l'Application : Utilise Docker Compose pour démarrer les conteneurs définis.
+
 ### Étapes d'Installation sur Azure
+
+##### Pré-requis
+
+1. **Être connecté à un compte Azure sur la machine**
+
+```
+pip install azure-cli
+```
+
+```
+az login
+```
+
+2. **Installer Terraform**
+
+```
+pip install python-terraform
+```
+
+#### Déploiment sur le Cloud
 
 1. **Configurer Terraform** :
 
@@ -222,6 +271,14 @@ Cette documentation décrit les API disponibles pour notre application Flask. L'
    ```bash
    terraform destroy
    ```
+
+Une fois le déploiement terminé, Terraform affichera les URLs des services :
+
+- Qualité du vin : http://<IP_PUBLIQUE>:8080
+- Prometheus : http://<IP_PUBLIQUE>:9090
+- Grafana : http://<IP_PUBLIQUE>:3000
+
+> <mark>**Attendre quelques minutes avant d'accéder aux URL, le temps de laisser les containers se construire sur la machine virtuelle** <mark>
 
 ## Conclusion
 
